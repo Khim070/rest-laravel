@@ -1,0 +1,1969 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Laravel API Documentation",
+        "description": "API documentation for your Laravel backend",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/cart": {
+            "get": {
+                "tags": [
+                    "Cart"
+                ],
+                "summary": "Get all cart items",
+                "operationId": "0652f94dde92e36bbb3c461356ce1d7b",
+                "responses": {
+                    "200": {
+                        "description": "List of cart items"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Cart"
+                ],
+                "summary": "Add a new item to the cart",
+                "operationId": "ba73c99e1f1e984d670c8f11ee9353dd",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "user_id",
+                                    "product_id"
+                                ],
+                                "properties": {
+                                    "user_id": {
+                                        "type": "integer"
+                                    },
+                                    "product_id": {
+                                        "type": "integer"
+                                    },
+                                    "quantity": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Cart item created"
+                    }
+                }
+            }
+        },
+        "/api/cart/{id}": {
+            "get": {
+                "tags": [
+                    "Cart"
+                ],
+                "summary": "Get cart item by ID",
+                "operationId": "557c72a5686912dee2512190ceb381c1",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Cart item details"
+                    },
+                    "404": {
+                        "description": "Cart item not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Cart"
+                ],
+                "summary": "Delete a cart of item",
+                "operationId": "f3071483f37366349f031eea76bb6aa2",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Cart delete successful"
+                    },
+                    "404": {
+                        "description": "Cart not found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Cart"
+                ],
+                "summary": "Update an existing cart item",
+                "operationId": "a3282fe0b357220569b7d9b27bfc9f79",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "quantity": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Cart item updated successfully"
+                    },
+                    "404": {
+                        "description": "Cart item not found"
+                    }
+                }
+            }
+        },
+        "/api/category": {
+            "get": {
+                "tags": [
+                    "Category"
+                ],
+                "summary": "Get all categories",
+                "operationId": "327644f4d836240fa297b2822ab6ca92",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Category"
+                ],
+                "summary": "Create a new category",
+                "operationId": "75c388e2c6bd800c115e7884d915a82f",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "Books"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Category created successfully"
+                    }
+                }
+            }
+        },
+        "/api/category/{id}": {
+            "get": {
+                "tags": [
+                    "Category"
+                ],
+                "summary": "Get specific category by ID",
+                "operationId": "25690688339275caf7ded3e8702e7670",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "404": {
+                        "description": "Category not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Category"
+                ],
+                "summary": "Delete category by ID",
+                "operationId": "9f4d6161e30ae141952e1f2b61f219a0",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Deleted successfully"
+                    },
+                    "404": {
+                        "description": "Category not found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Category"
+                ],
+                "summary": "Update specific category by ID",
+                "operationId": "ccfcfed31638930d9b9fed628c1bede6",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "Updated Category"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "404": {
+                        "description": "Category not found"
+                    }
+                }
+            }
+        },
+        "/api/coupon": {
+            "get": {
+                "tags": [
+                    "Coupon"
+                ],
+                "summary": "Get all coupons",
+                "operationId": "b2959e07dc9e4c1b5a95f17483828a58",
+                "responses": {
+                    "200": {
+                        "description": "List of coupons"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Coupon"
+                ],
+                "summary": "Create a new coupon",
+                "operationId": "bbbced0aac29488122138213afcfae93",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "code"
+                                ],
+                                "properties": {
+                                    "code": {
+                                        "type": "string"
+                                    },
+                                    "discount": {
+                                        "type": "number",
+                                        "format": "double"
+                                    },
+                                    "expires_at": {
+                                        "type": "string",
+                                        "format": "date"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Coupon created"
+                    }
+                }
+            }
+        },
+        "/api/coupon/{id}": {
+            "get": {
+                "tags": [
+                    "Coupon"
+                ],
+                "summary": "Get a coupon by ID",
+                "operationId": "d7eae06c67fadc363b38a418c0330986",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Coupon found"
+                    },
+                    "404": {
+                        "description": "Coupon not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Coupon"
+                ],
+                "summary": "Delete a coupon",
+                "operationId": "777a8e66a00b38ecd125aa490b5ae4ba",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Coupon delete successful"
+                    },
+                    "404": {
+                        "description": "Coupon not found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Coupon"
+                ],
+                "summary": "Update an existing coupon",
+                "operationId": "dd1e58b1967784966ae83657db699498",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "code": {
+                                        "type": "string"
+                                    },
+                                    "discount": {
+                                        "type": "number",
+                                        "format": "double"
+                                    },
+                                    "expires_at": {
+                                        "type": "string",
+                                        "format": "date"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Coupon updated"
+                    },
+                    "404": {
+                        "description": "Coupon not found"
+                    }
+                }
+            }
+        },
+        "/api/image": {
+            "get": {
+                "tags": [
+                    "Images"
+                ],
+                "summary": "Get all images",
+                "operationId": "1635eef9b114be63a3ac64e90831a3ae",
+                "responses": {
+                    "200": {
+                        "description": "List of all images"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Images"
+                ],
+                "summary": "upload a new images",
+                "operationId": "1df06bb2db0319e20582f119b51b6eb3",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "img[]": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string",
+                                            "format": "binary"
+                                        }
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Images uploaded"
+                    }
+                }
+            }
+        },
+        "/api/image/{id}": {
+            "get": {
+                "tags": [
+                    "Images"
+                ],
+                "summary": "Get image by ID",
+                "operationId": "4bba6f24ab0edb74e9fa3c4aa1b78996",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Image found"
+                    },
+                    "404": {
+                        "description": "Image not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Images"
+                ],
+                "summary": "Delete an image by ID",
+                "operationId": "ac560551c46b802a357cd0f01325efb4",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Image delete successfully"
+                    },
+                    "404": {
+                        "description": "Image not found"
+                    }
+                }
+            }
+        },
+        "/api/orderitem": {
+            "get": {
+                "tags": [
+                    "Order Item"
+                ],
+                "summary": "Get all order items",
+                "operationId": "79bfcde28e05ee953b294be59c7b9bfe",
+                "responses": {
+                    "200": {
+                        "description": "List of all order items"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Order Item"
+                ],
+                "summary": "Create a new order item",
+                "operationId": "08561f7b9db461a636999cd2e52796a2",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "order_id",
+                                    "product_id"
+                                ],
+                                "properties": {
+                                    "order_id": {
+                                        "type": "integer"
+                                    },
+                                    "product_id": {
+                                        "type": "integer"
+                                    },
+                                    "quantity": {
+                                        "type": "integer"
+                                    },
+                                    "price": {
+                                        "type": "number",
+                                        "format": "double"
+                                    },
+                                    "subtotal": {
+                                        "type": "number",
+                                        "format": "double"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Order item created successfully"
+                    }
+                }
+            }
+        },
+        "/api/orderitem/{id}": {
+            "get": {
+                "tags": [
+                    "Order Item"
+                ],
+                "summary": "Get order item by ID",
+                "operationId": "7350de2d6f3abb8efa1c126deb6c51ee",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Order item details"
+                    },
+                    "404": {
+                        "description": "Order item not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Order Item"
+                ],
+                "summary": "Delete an order item",
+                "operationId": "286dde3d8bcfa5e05306dc8f3ab7f8dd",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Order item successful delete"
+                    },
+                    "404": {
+                        "description": "Order item not found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Order Item"
+                ],
+                "summary": "Update an existing order item",
+                "operationId": "9cf1f909516857d7db71cedab7e3afae",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "order_id": {
+                                        "type": "integer"
+                                    },
+                                    "product_id": {
+                                        "type": "integer"
+                                    },
+                                    "quantity": {
+                                        "type": "integer"
+                                    },
+                                    "price": {
+                                        "type": "number",
+                                        "format": "double"
+                                    },
+                                    "subtotal": {
+                                        "type": "number",
+                                        "format": "double"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Order item updated successfully"
+                    },
+                    "404": {
+                        "description": "Order item not found"
+                    }
+                }
+            }
+        },
+        "/api/orderproduct": {
+            "get": {
+                "tags": [
+                    "Order Product"
+                ],
+                "summary": "Get all order products",
+                "operationId": "2576cc2db1d7c4902d9e6783e2dbb5b1",
+                "responses": {
+                    "200": {
+                        "description": "List of order products"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Order Product"
+                ],
+                "summary": "Create a new order product",
+                "operationId": "1a35245b53ff7807e903c08c20cdb573",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "user_id"
+                                ],
+                                "properties": {
+                                    "user_id": {
+                                        "type": "integer"
+                                    },
+                                    "total_price": {
+                                        "type": "number",
+                                        "format": "double"
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "enum": [
+                                            "pending",
+                                            "processing",
+                                            "shipped",
+                                            "delivered",
+                                            "cancelled"
+                                        ]
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Order product created"
+                    }
+                }
+            }
+        },
+        "/api/orderproduct/{id}": {
+            "get": {
+                "tags": [
+                    "Order Product"
+                ],
+                "summary": "Get order product by ID",
+                "operationId": "7283df77c228ee79464e0a6f29dc5fa8",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Order product details"
+                    },
+                    "404": {
+                        "description": "Order product not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Order Product"
+                ],
+                "summary": "Delete an order product",
+                "operationId": "0dfeae3792dd6137a415c7f9bdc8f786",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Order product delete successful"
+                    },
+                    "404": {
+                        "description": "Order product not found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Order Product"
+                ],
+                "summary": "Update an existing order product",
+                "operationId": "6aae02fd688ed3847a13822ae62c97a8",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "user_id": {
+                                        "type": "integer"
+                                    },
+                                    "total_price": {
+                                        "type": "number",
+                                        "format": "double"
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "enum": [
+                                            "pending",
+                                            "processing",
+                                            "shipped",
+                                            "delivered",
+                                            "cancelled"
+                                        ]
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Order product updated successfully"
+                    },
+                    "404": {
+                        "description": "Order product not found"
+                    }
+                }
+            }
+        },
+        "/api/payment": {
+            "get": {
+                "tags": [
+                    "Payment"
+                ],
+                "summary": "Get all payments",
+                "operationId": "318a8e6d1447a7cbd66237ccd6660678",
+                "responses": {
+                    "200": {
+                        "description": "List of payments"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Payment"
+                ],
+                "summary": "Create a new payment",
+                "operationId": "3bf87a1d2db6171310016de0615a4707",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "order_id",
+                                    "user_id"
+                                ],
+                                "properties": {
+                                    "order_id": {
+                                        "type": "integer"
+                                    },
+                                    "user_id": {
+                                        "type": "integer"
+                                    },
+                                    "amount": {
+                                        "type": "number",
+                                        "format": "double"
+                                    },
+                                    "payment_method": {
+                                        "type": "string",
+                                        "enum": [
+                                            "credit_card",
+                                            "paypal",
+                                            "bank_transfer"
+                                        ]
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "enum": [
+                                            "pending",
+                                            "completed",
+                                            "failed",
+                                            "refunded"
+                                        ]
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Payment created"
+                    }
+                }
+            }
+        },
+        "/api/payment/{id}": {
+            "get": {
+                "tags": [
+                    "Payment"
+                ],
+                "summary": "Get a payment by ID",
+                "operationId": "5ec820dc5a59156a714c50a583e10016",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Payment details"
+                    },
+                    "404": {
+                        "description": "Payment not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Payment"
+                ],
+                "summary": "Delete a payment",
+                "operationId": "3e64fcf6d186d746c69967dc5467c639",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Payment delete successful"
+                    },
+                    "404": {
+                        "description": "Payment not found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Payment"
+                ],
+                "summary": "Update a payment by ID",
+                "operationId": "5fd1263037169f9a22eb7d88d877b09a",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "amount": {
+                                        "type": "number",
+                                        "format": "double"
+                                    },
+                                    "payment_method": {
+                                        "type": "string",
+                                        "enum": [
+                                            "credit_card",
+                                            "paypal",
+                                            "bank_transfer"
+                                        ]
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "enum": [
+                                            "pending",
+                                            "completed",
+                                            "failed",
+                                            "refunded"
+                                        ]
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Payment updated successfully"
+                    },
+                    "404": {
+                        "description": "Payment not found"
+                    }
+                }
+            }
+        },
+        "/api/product": {
+            "get": {
+                "tags": [
+                    "Product"
+                ],
+                "summary": "Get all active products",
+                "operationId": "5cc57bec35d0f2045983cc8dcd00eccd",
+                "responses": {
+                    "200": {
+                        "description": "List of active products"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Product"
+                ],
+                "summary": "Create a new product",
+                "operationId": "a2a748b2864d35d1e50976b938ba8cd9",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "description",
+                                    "price",
+                                    "stock",
+                                    "category_id"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    },
+                                    "price": {
+                                        "type": "number",
+                                        "format": "float"
+                                    },
+                                    "stock": {
+                                        "type": "integer"
+                                    },
+                                    "image": {
+                                        "type": "integer"
+                                    },
+                                    "category_id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Product created successfully"
+                    }
+                }
+            }
+        },
+        "/api/product/{id}": {
+            "get": {
+                "tags": [
+                    "Product"
+                ],
+                "summary": "Get a product by ID",
+                "operationId": "2768d88590e39a7ded1d0032e64dded7",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Product retrieved successfully"
+                    },
+                    "404": {
+                        "description": "Product not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Product"
+                ],
+                "summary": "Delete a product by ID",
+                "operationId": "211dd9cfb689992e6af9db7d5b32da0d",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "delete product successfully"
+                    },
+                    "404": {
+                        "description": "Product not found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Product"
+                ],
+                "summary": "Update a product by ID",
+                "operationId": "ec9176d0ba73362b0d0451d9d952f730",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    },
+                                    "price": {
+                                        "type": "number",
+                                        "format": "float"
+                                    },
+                                    "stock": {
+                                        "type": "integer"
+                                    },
+                                    "category_id": {
+                                        "type": "integer"
+                                    },
+                                    "image": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Product updated successfully"
+                    },
+                    "404": {
+                        "description": "Product not found"
+                    }
+                }
+            }
+        },
+        "/api/product/reorder": {
+            "put": {
+                "tags": [
+                    "Product"
+                ],
+                "summary": "Reorder products",
+                "operationId": "d1428f5c888d85b6a8784766b5c7eab6",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer",
+                                            "example": 1
+                                        },
+                                        "p_order": {
+                                            "type": "integer",
+                                            "example": 2
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Product order updated successfully"
+                    }
+                }
+            }
+        },
+        "/api/review": {
+            "get": {
+                "tags": [
+                    "Review"
+                ],
+                "summary": "Get all reviews",
+                "operationId": "e7e622d2aa4ebb8cb45b87631a04bb0f",
+                "responses": {
+                    "200": {
+                        "description": "List of reviews"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Review"
+                ],
+                "summary": "Create a new review",
+                "operationId": "5ee0518db9c00b528e69b62e353649e5",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "user_id",
+                                    "product_id"
+                                ],
+                                "properties": {
+                                    "user_id": {
+                                        "type": "integer"
+                                    },
+                                    "product_id": {
+                                        "type": "integer"
+                                    },
+                                    "rating": {
+                                        "type": "number",
+                                        "format": "double"
+                                    },
+                                    "comment": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Review created"
+                    }
+                }
+            }
+        },
+        "/api/review/{id}": {
+            "get": {
+                "tags": [
+                    "Review"
+                ],
+                "summary": "Get a review by ID",
+                "operationId": "a7f6886d74c91b9a3ad7dc01913fdda8",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Review details"
+                    },
+                    "404": {
+                        "description": "Review not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Review"
+                ],
+                "summary": "Delete a review",
+                "operationId": "5510025e530b2055f7abcf08071dab92",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Review delete successful"
+                    },
+                    "404": {
+                        "description": "Review not found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Review"
+                ],
+                "summary": "Update a review by ID",
+                "operationId": "aa426422786bdae6ab3867cb14d10344",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "rating": {
+                                        "type": "number",
+                                        "format": "double"
+                                    },
+                                    "comment": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Review updated successfully"
+                    },
+                    "404": {
+                        "description": "Review not found"
+                    }
+                }
+            }
+        },
+        "/api/shipping": {
+            "get": {
+                "tags": [
+                    "Shipping"
+                ],
+                "summary": "Get all shipping records",
+                "operationId": "8d909533d0bb7762a7c1cf8afecaec5c",
+                "responses": {
+                    "200": {
+                        "description": "List of shipping records"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Shipping"
+                ],
+                "summary": "Create a new shipping record",
+                "operationId": "38f8429a5adeb0875f43452e032ec7b2",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "order_id",
+                                    "user_id"
+                                ],
+                                "properties": {
+                                    "order_id": {
+                                        "type": "integer"
+                                    },
+                                    "user_id": {
+                                        "type": "integer"
+                                    },
+                                    "address": {
+                                        "type": "string"
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "enum": [
+                                            "pending",
+                                            "shipped",
+                                            "delivered"
+                                        ]
+                                    },
+                                    "tracking_number": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Shipping created"
+                    }
+                }
+            }
+        },
+        "/api/shipping/{id}": {
+            "get": {
+                "tags": [
+                    "Shipping"
+                ],
+                "summary": "Get a specific shipping record by ID",
+                "operationId": "eeb50bcee75d15b1427c0b865d81a8ee",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Shipping details"
+                    },
+                    "404": {
+                        "description": "Shipping not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Shipping"
+                ],
+                "summary": "Delete a shipping record",
+                "operationId": "ba57b58a0035f0ae538f14847160ba02",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Shipping delete successful"
+                    },
+                    "404": {
+                        "description": "Shipping not found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Shipping"
+                ],
+                "summary": "Update a shipping record by ID",
+                "operationId": "f0fa513d0c41e543e083de9a450a64e1",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "address": {
+                                        "type": "string"
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "enum": [
+                                            "pending",
+                                            "shipped",
+                                            "delivered"
+                                        ]
+                                    },
+                                    "tracking_number": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Shipping updated successfully"
+                    },
+                    "404": {
+                        "description": "Shipping not found"
+                    }
+                }
+            }
+        },
+        "/api/user": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Get all active users",
+                "operationId": "971db9bc974c0e607288cfe7ecc10096",
+                "responses": {
+                    "200": {
+                        "description": "List of users"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Create a new user",
+                "operationId": "7c2f70a3743c58ead609cd340889444b",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "email",
+                                    "password"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "John Doe"
+                                    },
+                                    "image": {
+                                        "type": "integer",
+                                        "example": 1,
+                                        "nullable": true
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "john@example.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "secure123"
+                                    },
+                                    "phone": {
+                                        "type": "string",
+                                        "example": "012345678",
+                                        "nullable": true
+                                    },
+                                    "address": {
+                                        "type": "string",
+                                        "example": "Phnom Penh",
+                                        "nullable": true
+                                    },
+                                    "role": {
+                                        "type": "string",
+                                        "enum": [
+                                            "customer",
+                                            "admin",
+                                            "vendor"
+                                        ],
+                                        "example": "customer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "User created successfully"
+                    }
+                }
+            }
+        },
+        "/api/user/{id}": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Get user by ID",
+                "operationId": "d8f696420bea235f4916124c9ba1c507",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User details"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Delete user",
+                "operationId": "3559138f03cc1e344b3bc16ef904002c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User visibility toggled"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Update a user by ID",
+                "operationId": "4d7bac2703cb9774e7a7ca26e2d1be61",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "image": {
+                                        "type": "integer"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password"
+                                    },
+                                    "phone": {
+                                        "type": "string",
+                                        "nullable": true
+                                    },
+                                    "address": {
+                                        "type": "string",
+                                        "nullable": true
+                                    },
+                                    "role": {
+                                        "type": "string",
+                                        "enum": [
+                                            "customer",
+                                            "admin",
+                                            "vendor"
+                                        ]
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "User updated successfully"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            }
+        },
+        "/api/wishlist": {
+            "get": {
+                "tags": [
+                    "Wishlist"
+                ],
+                "summary": "Get all wishlist items",
+                "operationId": "7de9c05c67c97110c68860d9c0b814f9",
+                "responses": {
+                    "200": {
+                        "description": "List of wishlist items"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Wishlist"
+                ],
+                "summary": "Add a new item to the wishlist",
+                "operationId": "69cb7083b99e5e99c5ecbc02ff55e9af",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "user_id",
+                                    "product_id"
+                                ],
+                                "properties": {
+                                    "user_id": {
+                                        "type": "integer"
+                                    },
+                                    "product_id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Wishlist item created"
+                    }
+                }
+            }
+        },
+        "/api/wishlist/{id}": {
+            "get": {
+                "tags": [
+                    "Wishlist"
+                ],
+                "summary": "Get wishlist item by ID",
+                "operationId": "0462f5da607e16c2a0a859eaa24b0493",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Wishlist item details"
+                    },
+                    "404": {
+                        "description": "Wishlist item not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Wishlist"
+                ],
+                "summary": "Delete a wishlist item",
+                "operationId": "4baf028ba3d74d950330a8f0ec3acf55",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Wishlist item delete successful"
+                    },
+                    "404": {
+                        "description": "Wishlist item not found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Wishlist"
+                ],
+                "summary": "Update an existing wishlist item",
+                "operationId": "ea55781e3d6e9da495a29eacc9ffbfe7",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "user_id": {
+                                        "type": "integer"
+                                    },
+                                    "product_id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wishlist item updated successfully"
+                    },
+                    "404": {
+                        "description": "Wishlist item not found"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Cart",
+            "description": "Cart"
+        },
+        {
+            "name": "Category",
+            "description": "Category"
+        },
+        {
+            "name": "Coupon",
+            "description": "Coupon"
+        },
+        {
+            "name": "Images",
+            "description": "Images"
+        },
+        {
+            "name": "Order Item",
+            "description": "Order Item"
+        },
+        {
+            "name": "Order Product",
+            "description": "Order Product"
+        },
+        {
+            "name": "Payment",
+            "description": "Payment"
+        },
+        {
+            "name": "Product",
+            "description": "Product"
+        },
+        {
+            "name": "Review",
+            "description": "Review"
+        },
+        {
+            "name": "Shipping",
+            "description": "Shipping"
+        },
+        {
+            "name": "User",
+            "description": "User"
+        },
+        {
+            "name": "Wishlist",
+            "description": "Wishlist"
+        }
+    ]
+}
